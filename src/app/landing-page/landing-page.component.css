@@ -1,0 +1,13 @@
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /** Add vendor prefixes for additional browser support in dynamically vertically centering content **/
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+button {
+  background-color: red;
+  color: white;
+}
