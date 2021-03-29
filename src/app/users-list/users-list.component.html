@@ -1,1 +1,8 @@
-<p>users-list works!</p>
+<h2>Github Users</h2>
+<div *ngIf="users">
+  <ol>
+    <li *ngFor="let user of users">
+      {{ user.login }}
+    </li>
+  </ol>
+</div>
