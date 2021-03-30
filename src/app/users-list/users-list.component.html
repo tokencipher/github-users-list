@@ -2,7 +2,7 @@
 <div *ngIf="users">
   <ol>
     <li *ngFor="let user of users" (click)="showAvatar(user.avatar_url)">
-      {{ user.login }} 
+      <span class="username">{{ user.login }}</span> 
       <button class="user-action-button" id="delete-user">X</button> 
       <button class="user-action-button" id="edit-user">...</button>
     </li>
