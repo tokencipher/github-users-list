@@ -27,6 +27,7 @@ export class UsersListComponent implements OnInit {
 
   showAvatar(avatarURL: string): void {
     console.log(`Avatar url: ${avatarURL}`);
+    this.display = !this.display;
   }
 
 }
