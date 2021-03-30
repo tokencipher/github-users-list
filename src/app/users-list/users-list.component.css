@@ -7,7 +7,7 @@ li {
   background: grey;
   margin-bottom: 5px;
 }
-button {
+.user-action-button {
   position: relative;
   float: right;
   margin-left: 10px;
