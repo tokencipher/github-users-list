@@ -24,4 +24,8 @@ export class UsersListComponent implements OnInit {
       .subscribe(users => this.users = users)
   }
 
+  showAvatar(avatarURL: string): void {
+    console.log(`Avatar url: ${avatarURL}`);
+  }
+
 }
