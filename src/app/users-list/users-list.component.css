@@ -4,9 +4,12 @@ ol {
 li {
   padding: 20px;
   border-radius: 5px;
-  color: white;
+  color: black;
   background: grey;
   margin-bottom: 5px;
+}
+li span.username {
+  color: white!important;
 }
 .user-action-button {
   position: relative;
