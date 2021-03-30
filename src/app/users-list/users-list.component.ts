@@ -10,6 +10,7 @@ import { User } from './user';
 })
 export class UsersListComponent implements OnInit {
   users: User[];
+  display: boolean = false;
 
   constructor(
     private userService: UserService
