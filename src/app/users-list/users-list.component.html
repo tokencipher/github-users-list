@@ -1,7 +1,7 @@
 <h2>Github Users</h2>
 <div *ngIf="users">
   <ol>
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of users" (click)="showAvatar(user.avatar_url)">
       {{ user.login }} 
       <button class="user-action-button" id="delete-user">X</button> 
       <button class="user-action-button" id="edit-user">...</button>
