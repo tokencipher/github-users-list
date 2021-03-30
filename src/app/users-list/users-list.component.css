@@ -4,6 +4,7 @@ ol {
 li {
   padding: 20px;
   border-radius: 5px;
+  color: white;
   background: grey;
   margin-bottom: 5px;
 }
