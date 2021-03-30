@@ -10,7 +10,7 @@ import { User } from './user';
 })
 export class UsersListComponent implements OnInit {
   users: User[];
-  display: boolean = false;
+  selected: number;
 
   constructor(
     private userService: UserService
@@ -25,9 +25,8 @@ export class UsersListComponent implements OnInit {
       .subscribe(users => this.users = users)
   }
 
-  showAvatar(avatarURL: string): void {
-    console.log(`Avatar url: ${avatarURL}`);
-    this.display = !this.display;
+  showAvatar(userID): void {
+    this.selected = userID;
   }
 
 }
