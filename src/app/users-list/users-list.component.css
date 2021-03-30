@@ -11,6 +11,8 @@ li {
 li span.username {
   color: white!important;
 }
+.avatar-container { margin-left: 10px; }
+.avatar { border: 3px solid black; }
 .user-action-button {
   position: relative;
   float: right;
