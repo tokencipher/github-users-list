@@ -2,7 +2,9 @@
 <div *ngIf="users">
   <ol>
     <li *ngFor="let user of users">
-      {{ user.login }}
+      {{ user.login }} 
+      <button id="delete-user">X</button> 
+      <button id="edit-user">...</button>
     </li>
   </ol>
 </div>
