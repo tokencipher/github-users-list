@@ -9,13 +9,14 @@ import { MatDialogModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
-
+import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    UsersListComponent
+    UsersListComponent,
+    DeleteUserConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
