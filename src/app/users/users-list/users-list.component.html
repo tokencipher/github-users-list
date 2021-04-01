@@ -4,7 +4,7 @@
     <li *ngFor="let user of users" (click)="showAvatar(user.id)">
       <span class="username">{{ user.login }}</span> 
       <span *ngIf="selected == user.id" class="avatar-container"><img class="avatar" src="{{ user.avatar_url }}" height="50" width="100"/></span>
-      <button class="user-action-button" id="{{ 'delete-user-' + user.id }}">X</button> 
+      <button class="user-action-button" id="{{ 'delete-user-' + user.id }}" (click)="openDialog(user.id)">X</button> 
       <button class="user-action-button" id="{{ 'edit-user-' + user.id }}">...</button>
     </li>
   </ol>
