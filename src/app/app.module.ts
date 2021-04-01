@@ -26,6 +26,7 @@ import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confi
     MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DeleteUserConfirmationDialogComponent]
 })
 export class AppModule { }
