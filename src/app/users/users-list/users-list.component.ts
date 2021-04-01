@@ -3,6 +3,9 @@ import { UserService } from '../user.service';
 import { Observable } from 'rxjs';
 import { User } from '../user';
 
+import { MatDialog, MatDialogRef } from '@angular/material';
+import { DeleteUserConfirmationDialogComponent } from '../delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
+
 @Component({
   selector: 'app-users-list',
   templateUrl: './users-list.component.html',
@@ -13,7 +16,8 @@ export class UsersListComponent implements OnInit {
   selected: number;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -27,6 +31,20 @@ export class UsersListComponent implements OnInit {
 
   showAvatar(userID): void {
     this.selected = userID;
+  }
+
+  openDialog(userID): void {
+    const dialogRef = this.dialog.open(DeleteUserConfirmationDialogComponent, {
+      width: '250px',
+      height: '250px',
+      data: {userID: userID}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log('Value of deleteConfirmed: ', result.deleteConfirmed);
+      console.log('Value of userID: ', result.userID);
+    });
   }
 
 }
