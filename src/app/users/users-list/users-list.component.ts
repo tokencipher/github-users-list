@@ -29,11 +29,11 @@ export class UsersListComponent implements OnInit {
       .subscribe(users => this.users = users)
   }
 
-  showAvatar(userID): void {
+  showAvatar(userID: number): void {
     this.selected = userID;
   }
 
-  openDialog(userID): void {
+  openDialog(userID: number): void {
     const dialogRef = this.dialog.open(DeleteUserConfirmationDialogComponent, {
       width: '250px',
       height: '250px',
@@ -44,7 +44,13 @@ export class UsersListComponent implements OnInit {
       console.log('The dialog was closed');
       console.log('Value of deleteConfirmed: ', result.deleteConfirmed);
       console.log('Value of userID: ', result.userID);
+      this.deleteUser(result.userID);
     });
+  }
+
+  deleteUser(userID: number) {
+    this.users = this.users.filter(x => x.id !== userID);
+    console.log('Updated list of users after delete operation: ', this.users);
   }
 
 }
