@@ -29,6 +29,9 @@ import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-u
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [DeleteUserConfirmationDialogComponent]
+  entryComponents: [
+    DeleteUserConfirmationDialogComponent,
+    EditUsernameDialogComponent
+  ]  
 })
 export class AppModule { }
