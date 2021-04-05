@@ -56,4 +56,8 @@ export class UsersListComponent implements OnInit {
     //console.log('Updated list of users after delete operation: ', this.users);
   }
 
+  openEditUsernameDialog(): void { }
+
+  
+
 }
