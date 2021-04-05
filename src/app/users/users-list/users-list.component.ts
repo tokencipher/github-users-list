@@ -52,7 +52,7 @@ export class UsersListComponent implements OnInit {
   }
 
   deleteUser(userID: number): void {
-    this.users = this.users.filter(x => x.id !== userID);
+    this.users = this.users.filter(user => user.id !== userID);
     //console.log('Updated list of users after delete operation: ', this.users);
   }
 
