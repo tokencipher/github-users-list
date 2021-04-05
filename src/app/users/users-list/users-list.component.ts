@@ -33,7 +33,7 @@ export class UsersListComponent implements OnInit {
     this.selected = userID;
   }
 
-  openDialog(userID: number): void {
+  openDeleteUserDialog(userID: number): void {
     const dialogRef = this.dialog.open(DeleteUserConfirmationDialogComponent, {
       width: '250px',
       height: '250px',
