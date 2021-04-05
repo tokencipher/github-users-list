@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
+import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-username-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     UsersListComponent,
-    DeleteUserConfirmationDialogComponent
+    DeleteUserConfirmationDialogComponent,
+    EditUsernameDialogComponent
   ],
   imports: [
     BrowserModule,
