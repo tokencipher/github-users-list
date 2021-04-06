@@ -8,6 +8,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./edit-username-dialog.component.css']
 })
 export class EditUsernameDialogComponent {
+  // TODO: Define validator(s)
   username = new FormControl('');
 
   constructor(
@@ -18,5 +19,7 @@ export class EditUsernameDialogComponent {
   onCancelClick(): void {
     this.dialogRef.close();
   }
+
+  saveUsername(): void {}
 
 }
