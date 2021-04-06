@@ -62,7 +62,7 @@ export class UsersListComponent implements OnInit {
     // 2. Call editUsername method with args -> user: User, userName: string, index: number
   }
 
-  editUsername(user: User, userName: string, index: number): void {
+  editUsername(user: User, username: string, index: number): void {
     // TODO: Create algorithm for updating username
     // 1. Update `login` property of user object in users array to be updated
     // 2. Replace User object in users array accessed via saved index w/ updated User object
