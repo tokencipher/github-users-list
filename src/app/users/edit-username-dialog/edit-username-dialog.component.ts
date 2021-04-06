@@ -8,6 +8,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./edit-username-dialog.component.css']
 })
 export class EditUsernameDialogComponent {
+  username = new FormControl('');
 
   constructor(
     public dialogRef: MatDialogRef<EditUsernameDialogComponent>,
