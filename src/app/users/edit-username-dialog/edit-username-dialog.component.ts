@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
@@ -9,7 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class EditUsernameDialogComponent {
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<EditUsernameDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: {username: string}
+  ) { }
 
   
 
