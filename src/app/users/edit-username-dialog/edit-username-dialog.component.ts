@@ -15,6 +15,8 @@ export class EditUsernameDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: {username: string}
   ) { }
 
-  
+  onCancelClick(): void {
+    this.dialogRef.close();
+  }
 
 }
