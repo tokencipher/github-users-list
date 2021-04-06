@@ -1,1 +1,11 @@
-<p>edit-username-dialog works!</p>
+<h2>Edit Username</h2>
+<div mat-dialog-content>
+  <label>
+    Enter updated username:
+    <input type="text" [formControl]="username">
+  </label>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="saveUsername()">Update</button>
+</div>
