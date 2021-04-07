@@ -1,5 +1,6 @@
 h2 { padding: 40px; }
-ol { padding: 40px; }
+#users-list-container { height: 500px; overflow: auto; }
+#users-list-container ol { padding: 40px; }
 li {
   padding: 20px;
   border-radius: 5px;
