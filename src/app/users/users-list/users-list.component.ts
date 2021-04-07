@@ -42,18 +42,12 @@ export class UsersListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      /*
-      console.log('The dialog was closed');
-      console.log('Value of deleteConfirmed: ', result.deleteConfirmed);
-      console.log('Value of userID: ', result.userID);
-      */
       this.deleteUser(result.userID);
     });
   }
 
   deleteUser(userID: number): void {
     this.users = this.users.filter(user => user.id !== userID);
-    //console.log('Updated list of users after delete operation: ', this.users);
   }
 
   openEditUsernameDialog(user: User, index: number): void { 
