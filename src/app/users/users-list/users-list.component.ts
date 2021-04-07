@@ -6,6 +6,7 @@ import { User } from '../user';
 import { MatDialog, MatDialogRef } from '@angular/material';
 import { DeleteUserConfirmationDialogComponent } from '../delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
 import { EditUsernameDialogComponent } from '../edit-username-dialog/edit-username-dialog.component';
+import { AddUserDialogComponent } from '../add-user-dialog/add-user-dialog.component';
 
 @Component({
   selector: 'app-users-list',
@@ -67,6 +68,13 @@ export class UsersListComponent implements OnInit {
   editUsername(user: User, username: string, index: number): void {
     user.login = username;
     this.users[index] = user;
+  }
+
+  openAddUserDialog(): void {
+    const dialogRef = this.dialog.open(AddUserDialogComponent, {
+      width: '600px',
+      height: '500px'
+    });
   }
 
   addUser(user: User): void { this.users.push(user); }
