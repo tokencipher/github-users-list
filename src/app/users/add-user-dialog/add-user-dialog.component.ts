@@ -31,7 +31,11 @@ export class AddUserDialogComponent implements OnInit {
   ngOnInit() {
   }
 
-  onNoClick(): void {
+  cancel(): void {
+    this.dialogRef.close();
+  }
+
+  confirm(): void {
     this.dialogRef.close();
   }
 
