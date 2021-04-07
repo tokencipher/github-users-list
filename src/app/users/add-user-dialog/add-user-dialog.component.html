@@ -1,0 +1,101 @@
+<h2 mat-dialog-title>Add User</h2>
+<div mat-dialog-content>
+  <div formGroupName="userForm">
+    <h3>User creation form</h3>
+
+    <label>
+      Login:
+      <input type="text" formControlName="username">
+    </label>
+
+    <label>
+      ID:
+      <input type="text" formControlName="id">
+    </label>
+
+    <label>
+      Node ID:
+      <input type="text" formControlName="node_id">
+    </label>
+
+    <label>
+      Avatar URL:
+      <input type="text" formControlName="avatar_url">
+    </label>
+
+    <label>
+      Gravatar ID:
+      <input type="text" formControlName="gravatar_id">
+    </label>
+
+    <label>
+      URL:
+      <input type="text" formControlName="url">
+    </label>
+
+    <label>
+      HTML URL:
+      <input type="text" formControlName="html_url">
+    </label>
+
+    <label>
+      Followers URL:
+      <input type="text" formControlName="followers_url">
+    </label>
+
+    <label>
+      Following URL:
+      <input type="text" formControlName="following_url">
+    </label>
+
+    <label>
+      Gists URL:
+      <input type="text" formControlName="gists_url">
+    </label>
+
+    <label>
+      Starred URL:
+      <input type="text" formControlName="starred_url">
+    </label>
+
+    <label>
+      Subscriptions URL:
+      <input type="text" formControlName="subscriptions_url">
+    </label>
+
+    <label>
+      Organizations URL:
+      <input type="text" formControlName="organizations_url">
+    </label>
+
+    <label>
+      Repos URL:
+      <input type="text" formControlName="repos_url">
+    </label>
+
+    <label>
+      Events URL:
+      <input type="text" formControlName="events_url">
+    </label>
+
+    <label>
+      Received Events URL:
+      <input type="text" formControlName="received_events_url">
+    </label>
+
+    <label>
+      Type:
+      <input type="text" formControlName="type">
+    </label>
+
+    <label>
+      Site Admin:
+      <input type="text" formControlName="site_admin">
+    </label>
+
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="confirm()">Confirm</button>
+</div>
+
