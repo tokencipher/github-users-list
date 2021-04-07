@@ -1,5 +1,5 @@
 <h2>Github Users</h2>
-<div *ngIf="users">
+<div *ngIf="users" id="users-list-container">
   <ol>
     <li *ngFor="let user of users; let i = index" (click)="showAvatar(user.id)">
       <span class="username">{{ user.login }}</span> 
