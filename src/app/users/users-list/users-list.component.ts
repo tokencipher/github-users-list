@@ -57,14 +57,17 @@ export class UsersListComponent implements OnInit {
   }
 
   openEditUsernameDialog(user: User, index: number): void { 
-    // TODO: Create algorithm for actions to take after closing this dialog
-    // 1. Retrieve updated username if available/valid
-    // 2. Call editUsername method with args -> user: User, userName: string, index: number
     const dialogRef = this.dialog.open(EditUsernameDialogComponent, {
       width: '250px',
       height: '250px',
       data: {username: user.login}
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result.updatedUsername) {
+        this.editUsername(user, result.updatedUsername, index);
+      }
+    })
   }
 
   editUsername(user: User, username: string, index: number): void {
