@@ -17,9 +17,11 @@ export class EditUsernameDialogComponent {
   ) { }
 
   onCancelClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close({updatedUsername: null});
   }
 
-  saveUsername(): void {}
+  saveUsername(): void {
+    this.dialogRef.close({updatedUsername: this.username.value});
+  }
 
 }
