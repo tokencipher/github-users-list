@@ -69,4 +69,6 @@ export class UsersListComponent implements OnInit {
     this.users[index] = user;
   }
 
+  addUser(user: User): void { this.users.push(user); }
+
 }
