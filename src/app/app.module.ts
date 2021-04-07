@@ -12,6 +12,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
 import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-username-dialog.component';
+import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-u
     LandingPageComponent,
     UsersListComponent,
     DeleteUserConfirmationDialogComponent,
-    EditUsernameDialogComponent
+    EditUsernameDialogComponent,
+    AddUserDialogComponent
   ],
   imports: [
     BrowserModule,
