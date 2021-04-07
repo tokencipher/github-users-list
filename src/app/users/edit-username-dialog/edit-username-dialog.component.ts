@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class EditUsernameDialogComponent {
   // TODO: Define validator(s)
-  username = new FormControl('');
+  username = new FormControl(this.data.username);
 
   constructor(
     public dialogRef: MatDialogRef<EditUsernameDialogComponent>,
