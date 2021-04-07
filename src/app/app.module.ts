@@ -35,7 +35,8 @@ import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.
   bootstrap: [AppComponent],
   entryComponents: [
     DeleteUserConfirmationDialogComponent,
-    EditUsernameDialogComponent
+    EditUsernameDialogComponent,
+    AddUserDialogComponent
   ]  
 })
 export class AppModule { }
