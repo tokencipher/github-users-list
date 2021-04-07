@@ -16,3 +16,4 @@ li span.username { color: white!important; }
   float: right;
   margin-left: 10px;
 }
+#add-user-button { position: relative; top: 40px; margin: 40px; width: 100px; }
