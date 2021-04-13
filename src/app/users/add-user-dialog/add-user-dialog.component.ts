@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 
 class User {
@@ -38,7 +38,7 @@ export class AddUserDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<AddUserDialogComponent>) { 
     this.userForm = new FormGroup({
-      login: new FormControl(''),
+      login: new FormControl('', Validators.required),
       id: new FormControl(''),
       node_id: new FormControl(''),
       avatar_url: new FormControl(''),
