@@ -34,6 +34,7 @@ class User {
 })
 export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
+  newUser: User;
 
   constructor(public dialogRef: MatDialogRef<AddUserDialogComponent>) { 
     this.userForm = new FormGroup({
