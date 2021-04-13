@@ -1,11 +1,11 @@
 <h2 mat-dialog-title>Add User</h2>
 <div mat-dialog-content id="form-container">
-  <div formGroupName="userForm">
+  <div [formGroup]="userForm">
     <h3>User creation form</h3>
 
     <label>
       Login:
-      <input type="text" formControlName="username">
+      <input type="text" formControlName="login">
     </label>
 
     <label>
