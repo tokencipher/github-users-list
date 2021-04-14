@@ -46,6 +46,7 @@ export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
   newUser: User;
   users: User[];
+  id: number;
 
   constructor(
     public dialogRef: MatDialogRef<AddUserDialogComponent>,
@@ -90,7 +91,10 @@ export class AddUserDialogComponent implements OnInit {
   }
 
   confirm(): void {
-    this.dialogRef.close();
+    this.id = this.users.length + 1;
+    this.newUser = new User(this.userForm.value);
+    this.newUser.id = this.id;
+    this.dialogRef.close(this.newUser);
   }
 
 }
