@@ -52,7 +52,11 @@ export class AddUserDialogComponent implements OnInit {
     public userService: UserService
   ) { 
     this.userForm = new FormGroup({
-      login: new FormControl('', Validators.required),
+      login: new FormControl('', [
+        Validators.required, 
+        UserRegistrationFormValidators.usernameShouldNotContainSpaces,
+        Validators.pattern('[a-zA-Z0-9]')
+        ]),
       node_id: new FormControl(''),
       avatar_url: new FormControl(''),
       gravatar_id: new FormControl(''),
