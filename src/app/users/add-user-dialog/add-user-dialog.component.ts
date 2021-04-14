@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
+import { UserService } from '../user.service';
 
 class User {
   login: string;
@@ -35,8 +36,12 @@ class User {
 export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
   newUser: User;
+  users: User[];
 
-  constructor(public dialogRef: MatDialogRef<AddUserDialogComponent>) { 
+  constructor(
+    public dialogRef: MatDialogRef<AddUserDialogComponent>,
+    public userService: UserService
+  ) { 
     this.userForm = new FormGroup({
       login: new FormControl('', Validators.required),
       id: new FormControl(''),
@@ -60,6 +65,12 @@ export class AddUserDialogComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUsers();
+  }
+
+  getUsers(): void {
+    this.userService.getUsers()
+      .subscribe(users => this.users = users)
   }
 
   cancel(): void {
