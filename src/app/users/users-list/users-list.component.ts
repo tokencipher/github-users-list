@@ -75,6 +75,14 @@ export class UsersListComponent implements OnInit {
       width: '600px',
       height: '500px'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      
+      if (result.newUser) {
+        this.addUser(result.newUser);
+      }
+    
+    });
   }
 
   addUser(user: User): void { this.users.push(user); }
