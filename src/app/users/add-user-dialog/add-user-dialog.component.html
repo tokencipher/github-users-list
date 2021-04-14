@@ -8,12 +8,12 @@
       <input type="text" formControlName="login">
     </label>
 
-    <div *ngIf="userForm.get('login').invalid && (userForm.get('login').dirty || userForm.get('login').touched)" class="alert alert-danger">
-      <div *ngIf="userForm.get('login').errors.required">
+    <div *ngIf="login.invalid && (login.dirty || login.touched)" class="alert alert-danger">
+      <div *ngIf="login.errors.required">
         Username is required.
       </div>
 
-      <div *ngIf="userForm.get('login').errors.pattern">
+      <div *ngIf="login.errors?.pattern">
         Username can only contain Alphanumeric characters (a-zA-Z0-9).
       </div>
     </div>
