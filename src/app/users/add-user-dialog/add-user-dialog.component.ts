@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material';
 import { UserService } from '../user.service';
 
@@ -26,7 +26,6 @@ class User {
     Object.assign(this, init);
   }
 }
-
 
 @Component({
   selector: 'app-add-user-dialog',
