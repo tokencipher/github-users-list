@@ -16,5 +16,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
-  <button mat-button (click)="saveUsername()">Update</button>
+  <button mat-button (click)="saveUsername()" [disabled]="!username.valid">Update</button>
 </div>
