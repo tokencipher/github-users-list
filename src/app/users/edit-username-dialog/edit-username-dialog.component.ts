@@ -9,7 +9,10 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class EditUsernameDialogComponent {
   // TODO: Define validator(s)
-  username = new FormControl(this.data.username, Validators.required);
+  username = new FormControl(this.data.username, [
+    Validators.required, 
+    Validators.pattern(/^[a-zA-Z0-9]/)
+  ]);
 
   constructor(
     public dialogRef: MatDialogRef<EditUsernameDialogComponent>,
