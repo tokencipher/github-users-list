@@ -13,6 +13,7 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confirmation-dialog/delete-user-confirmation-dialog.component';
 import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-username-dialog.component';
 import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.
     UsersListComponent,
     DeleteUserConfirmationDialogComponent,
     EditUsernameDialogComponent,
-    AddUserDialogComponent
+    AddUserDialogComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
