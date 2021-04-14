@@ -92,11 +92,11 @@
       Site Admin:
       <input type="text" formControlName="site_admin">
     </label>
-
   </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="cancel()">Cancel</button>
-  <button mat-button (click)="confirm()">Confirm</button>
+  <button mat-button (click)="confirm()" [disabled]="!userForm.valid">Confirm</button>
 </div>
+
 
