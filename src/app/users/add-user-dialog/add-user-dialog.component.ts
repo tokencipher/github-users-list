@@ -44,7 +44,6 @@ export class AddUserDialogComponent implements OnInit {
   ) { 
     this.userForm = new FormGroup({
       login: new FormControl('', Validators.required),
-      id: new FormControl(''),
       node_id: new FormControl(''),
       avatar_url: new FormControl(''),
       gravatar_id: new FormControl(''),
