@@ -4,6 +4,15 @@
     Enter updated username:
     <input type="text" [formControl]="username" required>
   </label>
+
+  <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+    <div *ngIf="username.errors.required">
+      Username is required.
+    </div>
+
+    <div *ngIf="username.errors?.pattern">
+      Username can only contain Alphanumeric characters (a-zA-Z0-9).
+    </div>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onCancelClick()">Cancel</button>
