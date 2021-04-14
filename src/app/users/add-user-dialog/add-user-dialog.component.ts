@@ -27,6 +27,16 @@ class User {
   }
 }
 
+class UserRegistrationFormValidators {
+  static usernameShouldNotContainSpaces(control: AbstractControl): ValidationErrors | null {
+    if ((control.value as string).indexOf(' ') >= 0) {
+      return { shouldNotHaveSpaces: true }
+    }
+
+    return null;
+  }
+}
+
 @Component({
   selector: 'app-add-user-dialog',
   templateUrl: './add-user-dialog.component.html',
