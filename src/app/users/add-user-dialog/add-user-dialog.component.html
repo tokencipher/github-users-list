@@ -1,12 +1,22 @@
 <h2 mat-dialog-title>Add User</h2>
 <div mat-dialog-content id="form-container">
   <div [formGroup]="userForm">
-    <h3>User creation form</h3>
+    <h3>User registration form</h3>
 
     <label>
       Username:
       <input type="text" formControlName="login">
     </label>
+
+    <div *ngIf="userForm.get('login').invalid && (userForm.get('login').dirty || userForm.get('login').touched)" class="alert alert-danger">
+      <div *ngIf="userForm.get('login').errors.required">
+        Username is required.
+      </div>
+
+      <div *ngIf="userForm.get('login').errors.pattern">
+        Username can only contain Alphanumeric characters (a-zA-Z0-9).
+      </div>
+    </div>
 
     <label>
       Node ID:
