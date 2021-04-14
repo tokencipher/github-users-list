@@ -54,9 +54,8 @@ export class AddUserDialogComponent implements OnInit {
   ) { 
     this.userForm = new FormGroup({
       login: new FormControl('', [
-        Validators.required, 
-        UserRegistrationFormValidators.usernameShouldNotContainSpaces,
-        Validators.pattern('[a-zA-Z0-9]')
+        Validators.required,
+        Validators.pattern(/^[a-zA-Z0-9]/)
         ]),
       node_id: new FormControl(''),
       avatar_url: new FormControl(''),
@@ -79,6 +78,10 @@ export class AddUserDialogComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
+  }
+
+  get login() {
+    return this.userForm.get('login');
   }
 
   getUsers(): void {
