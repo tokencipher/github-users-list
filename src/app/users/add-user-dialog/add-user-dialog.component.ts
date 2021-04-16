@@ -4,8 +4,8 @@ import { MatDialogRef } from '@angular/material';
 import { UserService } from '../user.service';
 
 class User {
-  login: string;
-  id: number;
+  username: string;
+  user_id: number;
   node_id: string;
   avatar_url: string;
   url: string;
@@ -53,7 +53,7 @@ export class AddUserDialogComponent implements OnInit {
     public userService: UserService
   ) { 
     this.userForm = new FormGroup({
-      login: new FormControl('', [
+      username: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[a-zA-Z0-9]/)
         ]),
@@ -81,7 +81,7 @@ export class AddUserDialogComponent implements OnInit {
   }
 
   get login() {
-    return this.userForm.get('login');
+    return this.userForm.get('username');
   }
 
   getUsers(): void {
@@ -96,7 +96,7 @@ export class AddUserDialogComponent implements OnInit {
   confirm(): void {
     this.id = this.users.length + 1;
     this.newUser = new User(this.userForm.value);
-    this.newUser.id = this.id;
+    this.newUser.user_id = this.id;
     this.dialogRef.close({newUser: this.newUser});
 
     this.userService.addUser(this.newUser).subscribe();
