@@ -1,6 +1,6 @@
 export interface User {
-  login: string;
-  id: number;
+  username: string;
+  user_id: number;
   node_id: string;
   avatar_url: string;
   url: string;
