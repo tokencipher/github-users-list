@@ -48,14 +48,14 @@ export class UsersListComponent implements OnInit {
   }
 
   deleteUser(userID: number): void {
-    this.users = this.users.filter(user => user.id !== userID);
+    this.users = this.users.filter(user => user.user_id !== userID);
   }
 
   openEditUsernameDialog(user: User, index: number): void { 
     const dialogRef = this.dialog.open(EditUsernameDialogComponent, {
       width: '250px',
       height: '250px',
-      data: {username: user.login}
+      data: {username: user.username}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -66,7 +66,7 @@ export class UsersListComponent implements OnInit {
   }
 
   editUsername(user: User, username: string, index: number): void {
-    user.login = username;
+    user.username = username;
     this.users[index] = user;
   }
 
