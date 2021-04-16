@@ -3,7 +3,7 @@
   <ol>
     <li *ngFor="let user of users; let i = index" (click)="showAvatar(user.user_id)">
       <span class="username">{{ user.username }}</span> 
-      <span *ngIf="selected == user.id" class="avatar-container"><img class="avatar" src="{{ user.avatar_url }}" height="50" width="100"/></span>
+      <span *ngIf="selected == user.user_id" class="avatar-container"><img class="avatar" src="{{ user.avatar_url }}" height="50" width="100"/></span>
       <button class="user-action-button" id="{{ 'delete-user-' + user.user_id }}" (click)="openDeleteUserDialog(user.user_id)">X</button> 
       <button class="user-action-button" id="{{ 'edit-user-' + user.user_id }}" (click)="openEditUsernameDialog(user, i)">...</button>
     </li>
