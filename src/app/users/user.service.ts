@@ -7,14 +7,14 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class UserService {
-  private usersUrl: string = 'https://api.github.com/users';
+  private usersAPI: string = '/api';
 
   constructor(
     private http: HttpClient
   ) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl);
+    return this.http.get<User[]>(this.usersAPI);
   }
 
 }
