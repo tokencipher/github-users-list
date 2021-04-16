@@ -94,9 +94,7 @@ export class AddUserDialogComponent implements OnInit {
   }
 
   confirm(): void {
-    this.id = this.users.length + 1;
     this.newUser = new User(this.userForm.value);
-    this.newUser.user_id = this.id;
     this.dialogRef.close({newUser: this.newUser});
 
     this.userService.addUser(this.newUser).subscribe();
