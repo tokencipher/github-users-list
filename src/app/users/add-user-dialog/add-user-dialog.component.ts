@@ -6,6 +6,9 @@ import { UserService } from '../user.service';
 class User {
   username: string;
   user_id: number;
+  password: string;
+  first_name: string;
+  last_name: string;
   node_id: string;
   avatar_url: string;
   url: string;
