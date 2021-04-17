@@ -50,6 +50,7 @@ export class UsersListComponent implements OnInit {
     });
   }
 
+  // Pre users microservice implementation
   deleteUser(userID: number): void {
     this.users = this.users.filter(user => user.user_id !== userID);
   }
@@ -82,13 +83,14 @@ export class UsersListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       
       if (result.newUser) {
-        this.userService.addUser(result.newUser).subscribe();
+        this.userService.createUser(result.newUser).subscribe();
         this.getUsers();
       }
     
     });
   }
 
+  // Pre users microservice implementation
   addUser(user: User): void { this.users.push(user); }
 
 }
