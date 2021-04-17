@@ -80,6 +80,7 @@ export class UsersListComponent implements OnInit {
       
       if (result.newUser) {
         this.userService.addUser(result.newUser).subscribe();
+        this.getUsers();
       }
     
     });
