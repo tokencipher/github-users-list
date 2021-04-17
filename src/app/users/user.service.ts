@@ -14,15 +14,15 @@ export class UserService {
   ) { }
 
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersAPI + '/users');
+    return this.http.get<User[]>(`${this.usersAPI}/users`);
   }
 
   addUser(user: User) {
-    return this.http.post(this.usersAPI + '/user', {user});
+    return this.http.post(`${this.usersAPI}/user`, {user});
   }
 
   deleteUser(userID: number) {
-    return this.http.delete(this.usersAPI + '/user/' + userID);
+    return this.http.delete(`${this.usersAPI}/user/${userID}`);
   }
 
 }
