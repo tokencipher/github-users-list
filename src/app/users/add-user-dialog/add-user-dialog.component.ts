@@ -60,6 +60,9 @@ export class AddUserDialogComponent implements OnInit {
         Validators.required,
         Validators.pattern(/^[a-zA-Z0-9]/)
         ]),
+      password: new FormControl('', Validators.required),
+      first_name: new FormControl(''),
+      last_name: new FormControl(''),
       node_id: new FormControl(''),
       avatar_url: new FormControl(''),
       gravatar_id: new FormControl(''),
