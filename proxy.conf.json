@@ -6,5 +6,9 @@
   "/api/users": {
     "target": "http://localhost:3080",
     "secure": false
+  },
+  "/api/user": {
+    "target": "http://localhost:3080",
+    "secure": false
   }
 }
