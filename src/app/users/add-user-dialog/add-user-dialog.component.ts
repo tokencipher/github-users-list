@@ -90,6 +90,10 @@ export class AddUserDialogComponent implements OnInit {
     return this.userForm.get('username');
   }
 
+  get password() {
+    return this.userForm.get('password');
+  }
+
   getUsers(): void {
     this.userService.getUsers()
       .subscribe(users => this.users = users)
