@@ -43,7 +43,9 @@ export class UsersListComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.deleteUser(result.userID);
+      if (result.deleteConfirmed) {
+        this.userService.deleteUser(result.userID).subscribe();
+      }
     });
   }
 
