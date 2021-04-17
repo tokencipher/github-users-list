@@ -48,7 +48,6 @@ class UserRegistrationFormValidators {
 export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
   newUser: User;
-  users: User[];
   id: number;
 
   constructor(
@@ -82,9 +81,7 @@ export class AddUserDialogComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.getUsers();
-  }
+  ngOnInit() {}
 
   get username() {
     return this.userForm.get('username');
@@ -92,11 +89,6 @@ export class AddUserDialogComponent implements OnInit {
 
   get password() {
     return this.userForm.get('password');
-  }
-
-  getUsers(): void {
-    this.userService.getUsers()
-      .subscribe(users => this.users = users)
   }
 
   cancel(): void {
