@@ -86,7 +86,7 @@ export class AddUserDialogComponent implements OnInit {
     this.getUsers();
   }
 
-  get login() {
+  get username() {
     return this.userForm.get('username');
   }
 
