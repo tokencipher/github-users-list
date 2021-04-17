@@ -48,7 +48,6 @@ class UserRegistrationFormValidators {
 export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
   newUser: User;
-  id: number;
 
   constructor(
     public dialogRef: MatDialogRef<AddUserDialogComponent>,
