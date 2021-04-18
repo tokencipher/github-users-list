@@ -44,8 +44,9 @@ export class UsersListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result.deleteConfirmed) {
-        this.userService.deleteUser(result.userID).subscribe();
-        this.getUsers();
+        this.userService.deleteUser(result.userID).subscribe(() => {
+          this.getUsers();
+        });
       }
     });
   }
@@ -65,8 +66,9 @@ export class UsersListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result.updatedUsername) {
         let patchedUser = {username: result.updatedUsername};
-        this.userService.updateUser(user.user_id, patchedUser).subscribe();
-        this.getUsers();
+        this.userService.updateUser(user.user_id, patchedUser).subscribe(() => {
+          this.getUsers();
+        });
       }
     });
   }
@@ -85,8 +87,9 @@ export class UsersListComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       
       if (result.newUser) {
-        this.userService.createUser(result.newUser).subscribe();
-        this.getUsers();
+        this.userService.createUser(result.newUser).subscribe(() => {
+          this.getUsers();
+        });
       }
     
     });
