@@ -64,9 +64,11 @@ export class UsersListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result.updatedUsername) {
-        this.editUsername(user, result.updatedUsername, index);
+        let patchedUser = {username: result.updatedUsername};
+        this.userService.updateUser(user.user_id, patchedUser).subscribe();
+        this.getUsers();
       }
-    })
+    });
   }
 
   editUsername(user: User, username: string, index: number): void {
