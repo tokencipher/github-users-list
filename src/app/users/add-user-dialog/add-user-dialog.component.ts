@@ -48,6 +48,7 @@ class UserRegistrationFormValidators {
 export class AddUserDialogComponent implements OnInit {
   userForm: FormGroup;
   newUser: User;
+  roles: String[] = ['superadmin', 'admin', 'developer'];
 
   constructor(
     public dialogRef: MatDialogRef<AddUserDialogComponent>,
