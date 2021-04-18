@@ -25,4 +25,8 @@ export class UserService {
     return this.http.delete(`${this.usersAPI}/user/${userID}`);
   }
 
+  updateUser(userID: number, user: Partial<User>) {
+    return this.http.patch(`${this.usersAPI}/user/${userID}`, {user});
+  }
+
 }
