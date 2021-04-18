@@ -76,7 +76,7 @@ export class AddUserDialogComponent implements OnInit {
       repos_url: new FormControl(''),
       events_url: new FormControl(''),
       received_events_url: new FormControl(''),
-      type: new FormControl(''),
+      type: new FormControl('', Validators.required),
       site_admin: new FormControl('')
     });
   }
@@ -89,6 +89,10 @@ export class AddUserDialogComponent implements OnInit {
 
   get password() {
     return this.userForm.get('password');
+  }
+
+  get type() {
+    return this.userForm.get('type');
   }
 
   cancel(): void {
