@@ -109,10 +109,23 @@
       <input type="text" formControlName="received_events_url">
     </label>
 
+    <br>
+
     <label>
-      Type:
-      <input type="text" formControlName="type">
+      User Role:
+      <select formControlName="type">
+        <option value="" disabled>Choose user role</option>
+        <option *ngFor="let role of roles">{{role}}</option>
+      </select>
     </label>
+
+    <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert alert-danger">
+      <div *ngIf="type.errors.required">
+        User role selection is required.
+      </div>
+    </div>
+
+    <br>
 
     <label>
       Site Admin:
