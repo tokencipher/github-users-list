@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { User } from './user';
 
 @Injectable({
@@ -27,6 +28,12 @@ export class UserService {
 
   updateUser(userID: number, user: Partial<User>) {
     return this.http.patch(`${this.usersAPI}/user/${userID}`, {user});
+  }
+
+  checkUsername(username: string) {
+    return this.http.get(`${this.usersAPI}/user/${username}`).pipe(
+      map(res => res)
+    );
   }
 
 }
