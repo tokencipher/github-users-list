@@ -16,6 +16,10 @@
       <div *ngIf="username.errors?.pattern">
         Username can only contain Alphanumeric characters (a-zA-Z0-9).
       </div>
+
+      <div *ngIf="username.errors?.usernameInUse">
+        Username is already in use.
+      </div>
     </div>
 
     <label>
