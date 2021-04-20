@@ -14,5 +14,9 @@
   "/api/user/:id": {
     "target": "http://localhost:3080",
     "secure": false
+  },
+  "/api/user/:username" : {
+    "target": "http://localhost:3080",
+    "secure": false
   }
 }
