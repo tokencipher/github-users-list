@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
-import { MatDialogRef } from '@angular/material';
+import { getMatIconFailedToSanitizeUrlError, MatDialogRef } from '@angular/material';
+import { UsernameValidator } from 'src/app/validators/username';
 import { UserService } from '../user.service';
 
 class User {
@@ -40,6 +41,7 @@ class UserRegistrationFormValidators {
   }
 }
 
+
 @Component({
   selector: 'app-add-user-dialog',
   templateUrl: './add-user-dialog.component.html',
@@ -52,13 +54,15 @@ export class AddUserDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<AddUserDialogComponent>,
-    public userService: UserService
+    public userService: UserService,
+    public usernameValidator: UsernameValidator
   ) { 
     this.userForm = new FormGroup({
       username: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^[a-zA-Z0-9]/)
-        ]),
+          Validators.required,
+          Validators.pattern(/^[a-zA-Z0-9]/)
+        ], 
+      [this.usernameValidator.checkUsername.bind(usernameValidator)]),
       password: new FormControl('', Validators.required),
       first_name: new FormControl(''),
       last_name: new FormControl(''),
