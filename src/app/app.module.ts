@@ -14,6 +14,7 @@ import { DeleteUserConfirmationDialogComponent } from './users/delete-user-confi
 import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-username-dialog.component';
 import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UsernameValidator } from './validators/username';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatDialogModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UsernameValidator],
   bootstrap: [AppComponent],
   entryComponents: [
     DeleteUserConfirmationDialogComponent,
