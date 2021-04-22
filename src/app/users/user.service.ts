@@ -43,7 +43,7 @@ export class UserService {
   }
 
   checkUsername(username: string) {
-    return this.http.get(`${this.usersAPI}/user/${username}`).pipe(
+    return this.http.get(`${this.usersAPI}/check/user/${username}`).pipe(
       map(res => res),
       catchError(this.handleError<User>('checkUsername'))
     );
