@@ -15,8 +15,12 @@
     "target": "http://localhost:3080",
     "secure": false
   },
-  "/api/user/:username" : {
+  "/api/user/:username": {
     "target": "http://localhost:3080",
     "secure": false
-  }
+  }, 
+  "/api/check/user/:username": {
+    "target": "http://localhost:3080",
+    "secure": false
+  } 
 }
