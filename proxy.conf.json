@@ -1,4 +1,24 @@
 {
+  "/api/auth": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/auth/login": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/auth/create": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/auth/update/:id": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/auth/delete/:id": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
   "/api": {
     "target": "http://localhost:3080",
     "secure": false
