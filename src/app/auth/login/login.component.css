@@ -7,3 +7,15 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
+input {
+  margin: 5px;
+  display: block;
+}
+h1 {
+  text-align: center;
+}
+button {
+  position: relative;
+  top: 10px;
+  left: 50%;
+}
