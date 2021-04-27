@@ -15,6 +15,7 @@ import { EditUsernameDialogComponent } from './users/edit-username-dialog/edit-u
 import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UsernameValidator } from './validators/username';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UsernameValidator } from './validators/username';
   ],
   imports: [
     BrowserModule,
+    AuthModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
