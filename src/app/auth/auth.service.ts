@@ -7,7 +7,7 @@ import { User } from '../users/user';
 })
 export class AuthService {
   private authAPI: string = '/api/auth';
-  private accessToken: string;
+  accessToken: string;
 
   constructor(private http: HttpClient) { }
 
