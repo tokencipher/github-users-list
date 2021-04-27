@@ -29,5 +29,10 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
+  onSubmit() {
+    this.authService.login(this.loginForm.value).subscribe((data: any) => {
+      this.authService.accessToken = data.access_token;
+    });
+  }
 
 }
