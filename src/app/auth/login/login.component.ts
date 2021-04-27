@@ -12,9 +12,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService) {
     this.loginForm = new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^[a-zA-Z0-9]/)]),
+      username: new FormControl(''),
       password: new FormControl('')
     })
    }
