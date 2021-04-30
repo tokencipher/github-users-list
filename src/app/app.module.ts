@@ -16,6 +16,8 @@ import { AddUserDialogComponent } from './users/add-user-dialog/add-user-dialog.
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { UsernameValidator } from './validators/username';
 import { AuthModule } from './auth/auth.module';
+import { AuthInterceptorService } from './http-interceptors/auth-interceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { AuthModule } from './auth/auth.module';
     MatDialogModule,
     ReactiveFormsModule
   ],
-  providers: [UsernameValidator],
+  providers: [UsernameValidator, { 
+    provide: HTTP_INTERCEPTORS, 
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent],
   entryComponents: [
     DeleteUserConfirmationDialogComponent,
