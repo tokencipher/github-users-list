@@ -27,6 +27,10 @@ export class AuthService {
     return this.http.delete(`${this.authAPI}/delete/${user.user_id}`);
   }
 
+  public isLoggedIn() {
+    return moment().isBefore(this.getExpiration());  
+  }
+
   logout() {
     localStorage.removeItem("access_token");
     localStorage.removeItem("expiry")
@@ -49,5 +53,10 @@ export class AuthService {
     // requests due to multiple subscriptions.
   }
 
+  getExpiration() {
+    const expiration = localStorage.getItem("expiry");
+    const expiry = JSON.parse(expiration);
+    return moment(expiry);
+  }
 
 }
