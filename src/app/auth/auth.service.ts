@@ -5,6 +5,7 @@ import { pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import * as moment from 'moment';
+import { UsernameValidator } from '../validators/username';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +24,8 @@ export class AuthService {
     return this.http.put(`${this.authAPI}/update/${user.user_id}`, {user});
   }
 
-  deleteUser(user: User) {
-    return this.http.delete(`${this.authAPI}/delete/${user.user_id}`);
+  deleteUser(userID: number) {
+    return this.http.delete(`${this.authAPI}/delete/${userID}`);
   }
 
   public isLoggedIn() {
@@ -32,21 +33,26 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("expiry")
+    localStorage.removeItem('access_token');
+    localStorage.removeItem('expiry')
   }
 
   private setSession(payload) {
     const expiry = moment().add(payload.expiresIn, 'second');
 
+    console.log(`Auth Service::${payload.access_token}`)
+
     localStorage.setItem('access_token', payload.access_token);
-    localStorage.setItem("expiry", JSON.stringify(expiry.valueOf()));
+    localStorage.setItem('expiry', JSON.stringify(expiry.valueOf()));
   }
 
   login(user: Partial<User>) {
     return this.http.post(`${this.authAPI}/login`, user)
       .pipe(
-        map((res: any) => this.setSession)
+        map((res: any) => { 
+          console.log('Login response: ' + res.access_token)
+          this.setSession(res)
+        })
       );
     // Can possibly call shareReplay() to prevent the receiver of 
     // this Observable from accidentally triggering multiple POST
@@ -54,7 +60,7 @@ export class AuthService {
   }
 
   getExpiration() {
-    const expiration = localStorage.getItem("expiry");
+    const expiration = localStorage.getItem('expiry');
     const expiry = JSON.parse(expiration);
     return moment(expiry);
   }
