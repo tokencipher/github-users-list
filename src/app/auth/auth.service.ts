@@ -27,6 +27,11 @@ export class AuthService {
     return this.http.delete(`${this.authAPI}/delete/${user.user_id}`);
   }
 
+  logout() {
+    localStorage.removeItem("access_token");
+    localStorage.removeItem("expiry")
+  }
+
   private setSession(payload) {
     const expiry = moment().add(payload.expiresIn, 'second');
 
